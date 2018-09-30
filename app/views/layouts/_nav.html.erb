@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse cl">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>
@@ -10,9 +10,23 @@
     </ul>
     <form class="navbar-form navbar-left" action="/action_page.php">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" class="form-control" placeholder="Find user">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-warning">User</button>
     </form>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Find post">
+      </div>
+      <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+    <% if !user_signed_in? then %>
+    <ul class="nav navbar-nav navbar-right">
+      <li>  <%= link_to :SignUp, new_user_registration_path, 
+            class: 'glyphicon glyphicon-user'%>
+      </li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+    <% end %>
   </div>
 </nav>

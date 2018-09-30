@@ -3,3 +3,35 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+.cl {
+  background-color: #0099ff;
+  border-radius: 0px;
+  border: none;
+}
+a {
+	color: #fff;
+}
+.algn {
+	text-align: center;
+	margin-left: 25%;
+}
+.hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+.fcl {
+	background-color: #0099ff;
+}
+ul li a {
+  color: #fff;
+}
+.form-length {
+	width: 30%;
+}
+.h2p {
+	padding: 2% 6% 2% 6%;
+	margin-bottom: 6%;
+	font-size: 15px;
+}

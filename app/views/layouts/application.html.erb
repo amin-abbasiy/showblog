@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Showblog</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +10,21 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
     <%= render 'layouts/nav' %>
-    <%= yield %>
+    <% flash.each do |type, msg| %>
+        <div class="alert alert-#{type}"><%= msg %></div>
+    <% end %>
+    <div class="panel-group bdr">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <%= yield(:body) %> 
+        </div>
+        <div class="panel-body">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
