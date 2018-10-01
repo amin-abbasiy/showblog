@@ -18,7 +18,7 @@
     <div class="panel-group bdr">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <%= yield(:body) %> 
+          <center><%= yield(:body) %></center> 
         </div>
         <div class="panel-body">
           <%= yield %>
@@ -26,6 +26,6 @@
       </div>
     </div>
     <%= render 'layouts/footer' %>
-    <%= user_session %>
+    <%= user_session[:id] %>
   </body>
 </html>

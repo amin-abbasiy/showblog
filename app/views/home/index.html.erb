@@ -4,3 +4,26 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 </center>
+<%= all.each do |post| %>
+<div class="container">
+	<div class="row">
+		<!-- Blog Entries Column -->
+		<div class="col-md-8">
+			<h1 class="my-4"><%= post.title %></h1>
+			<!-- Blog Post -->
+			<div class="card mb-4">
+				<%= image_tag post.picture.url %>
+				<div class="card-body">
+					<p class="card-text">
+						<%= post.description %>
+					</p>
+					<a href="#" class="btn btn-primary">Read More &rarr;</a>
+				</div>
+				<div class="card-footer text-muted">
+					Posted:
+				</div>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+<% end %>
