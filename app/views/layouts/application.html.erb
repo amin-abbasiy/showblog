@@ -13,7 +13,7 @@
     <%= render 'layouts/header' %>
     <%= render 'layouts/nav' %>
     <% flash.each do |type, msg| %>
-        <div class="alert alert-#{type}"><%= msg %></div>
+        <div class="alert alert-<%= type %>"><%= msg %></div>
     <% end %>
     <div class="panel-group bdr">
       <div class="panel panel-primary">
@@ -26,5 +26,6 @@
       </div>
     </div>
     <%= render 'layouts/footer' %>
+    <%= user_session %>
   </body>
 </html>

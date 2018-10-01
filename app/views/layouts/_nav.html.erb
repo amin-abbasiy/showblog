@@ -25,8 +25,13 @@
       <li>  <%= link_to :SignUp, new_user_registration_path, 
             class: 'glyphicon glyphicon-user'%>
       </li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><%= link_to "Signin", new_user_session_path, class: 'glyphicon glyphicon-log-in' %></li>
     </ul>
+    <% else %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li></li>
+      </ul>
     <% end %>
   </div>
 </nav>
