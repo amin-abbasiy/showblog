@@ -1,0 +1,11 @@
+<%= form_for(@post, html: { multipart: true }) do |f| %>
+   <h1><%= render('shared/error_messages', object: f.object) %></h1>
+   <%= f.label :Title %>
+   <%= f.text_field :title, class: 'form-control' %>
+   <%= f.label :Describe %>
+   <%= f.text_area :description, class: 'form-control' %>
+   <br/>
+   <%= f.file_field :picture %>
+   <br/>
+   <%= f.submit yield(:btn), class: 'btn btn-primary btn-block' %>
+<% end %>

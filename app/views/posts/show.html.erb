@@ -1,2 +1,62 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+          <!-- Title -->
+          <h1 class="mt-4"><%= @post.title %></h1>
+
+          <!-- Author -->
+          <p class="lead">
+            by
+            <%= link_to @post.user.name, "/users/edit" %>
+          </p>
+
+          <hr>
+
+          <!-- Date/Time -->
+          <p>Posted:<%= time_ago_in_words(@post.created_at) %></p>
+
+          <hr>
+
+          <!-- Preview Image -->
+          <%= image_tag @post.picture.url, data: {width: 600, height: 300} %>
+          <hr>
+
+          <!-- Post Content -->
+          <p class="lead">Head</p>
+
+          <p><%= @post.description %></p>
+          <blockquote class="blockquote">
+            <p class="mb-0">quote</p>
+          </blockquote>
+          <hr>
+
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
+              <%= form_for(@comment) do |f| %>
+                <div class="form-group">
+                  <%= f.text_area :Compose %>
+                </div>
+                <%= f.submit :Compose, class: 'btn btn-primary' %>
+              <% end %>
+            </div>
+          </div>
+
+          <!-- Single Comment -->
+          <div class="media mb-4">
+            <%= %>
+            <div class="media-body">
+              <h5 class="mt-0"><%=  %></h5>
+               comment
+            </div>
+          </div>
+            </div>
+          </div>
+
+        </div>

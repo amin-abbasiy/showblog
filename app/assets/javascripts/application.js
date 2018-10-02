@@ -14,3 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+
+$("div#max").text(function(index, currentText) {
+    return currentText.substr(0, 50);
+});

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-     @posts = Post.all
+     @posts = Post.where("user_id = ? ", current_user.id)
   end
   def new
     @post = Post.new
@@ -16,9 +16,27 @@ class PostsController < ApplicationController
      end
   end
   def edit
+    @post = Post.find(params[:id])
+  end
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params) then
+        flash[:success] = "Post Updated:)"
+        redirect_to posts_path
+    else
+        flash[:danger] = "We Cant Apply It:("
+        redirect_to request.referrer
+    end
+  end
+  def show
+    @post = Post.find(params[:id])
   end
 
-  def show
+  def destroy
+     @post = Post.find(params[:id])
+     @post.destroy
+     flash[:success] = "Post Deleted"
+     redirect_to request.referrer
   end
   private
   def post_params
