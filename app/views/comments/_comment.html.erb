@@ -1,0 +1,7 @@
+<div class="media mb-4">
+	<span class="image-circle"><%= gravatar_for(comment.user.email, 30) %></span>
+	<div class="media-body">
+		<h5 class="mt-0 label label-info"><%= comment.user.name %></h5>
+		<%= comment.content %>
+	</div>
+</div>

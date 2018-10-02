@@ -37,11 +37,12 @@
 
           <!-- Comments Form -->
           <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
+            <h5 class="card-header label label-primary">Leave a Comment:</h5>
             <div class="card-body">
               <%= form_for(@comment) do |f| %>
                 <div class="form-group">
-                  <%= f.text_area :Compose %>
+                  <%= f.text_area :content, class: 'form-control' %>
+                  <%= hidden_field_tag :post_id, @post.id %>
                 </div>
                 <%= f.submit :Compose, class: 'btn btn-primary' %>
               <% end %>
@@ -49,13 +50,7 @@
           </div>
 
           <!-- Single Comment -->
-          <div class="media mb-4">
-            <%= %>
-            <div class="media-body">
-              <h5 class="mt-0"><%=  %></h5>
-               comment
-            </div>
-          </div>
+              <%= render @comments %>
             </div>
           </div>
 
